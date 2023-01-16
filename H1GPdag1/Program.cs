@@ -11,10 +11,11 @@
             
 
             Console.WriteLine("Hello! \n\nWhich conversion would you like to use? \n\na: Celsius to Fahrenheit \nb: Fahrenheit to Celsius " +
-                "\n\nPress the appropriate key and then press Enter");
+                "\nAny key: Quit \n\nPress the appropriate key and then press Enter");
             
             string UserChoice = Console.ReadLine();
 
+                
             if(UserChoice == "a")
             {
                 Console.Clear();
@@ -23,48 +24,33 @@
                 
                 celsius = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Celsius = " + celsius);
+                Console.WriteLine("\n\nCelsius = " + celsius);
                 fahrenheit = (celsius * 9) / 5 + 32;
-                Console.WriteLine("Fahrenheit = " + fahrenheit);
+                Console.WriteLine("\nFormula: (Celsius * 9) / 5 + 32");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nFahrenheit = " + fahrenheit);
 
             }
             else if(UserChoice == "b")
             {
                 Console.Clear();
-                Console.WriteLine("Fahrenheit to Celsius");
                 Console.WriteLine("Fahrenheit to Celsius \n\nPlease write the temperatur value for Fahrenheit and press enter");
 
                 fahrenheit = Convert.ToInt32(Console.ReadLine());
 
-                Console.WriteLine("Fahrenheit = " + fahrenheit);
-                celsius = (fahrenheit / 32) * 5 / 9;
-                Console.WriteLine("Celsius = " + celsius);
+                Console.WriteLine("\n\nFahrenheit = " + fahrenheit);
+                celsius = (fahrenheit - 32) * 5 / 9;
+                Console.WriteLine("\nFormula: (Fahrenheit - 32) * 5 / 9");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("\nCelsius = " + celsius);
             }
+            else
+            {
+                Console.Clear();
+                Console.WriteLine("Press enter twice to quit");
+            }
+
             Console.ReadKey();
-
-
-
-
-
-
-
-
-
-            /*Console.WriteLine("Celsius " + celsius);
-
-            fahrenheit = (celsius * 9) / 5 + 32;
-
-            Console.WriteLine("Fahrenheit "+fahrenheit);
-
-            Console.ReadLine();*/
-
-            /*Console.WriteLine(("Fahrenheit " + fahrenheit);
-
-            celsius = (fahrenheit/32)*5/9;
-
-            Console.WriteLine("Celsius " + celsius);
-
-            Console.ReadLine();*/
 
         }
     }
